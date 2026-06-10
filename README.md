@@ -1,4 +1,4 @@
-<img width="790" height="812" alt="image" src="https://github.com/user-attachments/assets/86a5a00a-4b96-4e89-9ff2-57aea1170685" /># Automated Crop & Weed Object Detection Pipeline (YOLOv8)
+# Automated Crop & Weed Object Detection Pipeline (YOLOv8)
 
 An end-to-end computer vision pipeline utilizing the YOLOv8 architecture to automate precision agricultural crop tracking and weed identification. This project transitions loose field imagery into structured, GPU-ready tensors for high-speed spatial inference.
 
