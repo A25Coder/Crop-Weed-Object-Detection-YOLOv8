@@ -14,9 +14,9 @@ An end-to-end computer vision pipeline utilizing the YOLOv8 architecture to auto
 * **Hardware Acceleration:** Cloud-based GPU infrastructure (Google Colab)
 
 ## 📁 Repository Structure
-* `data/dataset.yaml`: Configuration mapping defining data path references and target class names.
+
 * `scripts/train_yolo.py`: Python module automating the 80/20 train/validation partitioning, directory construction, and training loops.
-* `models/best.pt`: Exported, custom-trained neural network weights ready for immediate deployment.
+* `scripts/visualize_results.py`: An evaluation utility using OpenCV and Matplotlib to extract trained model inference outputs and visually display bounding boxes.
 
 ## ⚙️ Model Pipeline & Core Workflow
 1. **Automated Scanning:** The script dynamically crawls data structures to identify `.jpeg`, `.jpg`, and `.png` image matrices.
@@ -25,17 +25,4 @@ An end-to-end computer vision pipeline utilizing the YOLOv8 architecture to auto
 4. **Data Augmentation:** Embedded transformations (spatial transformations, contrast adjustments, and flipping) are executed at runtime to scale training variations and protect against overfitting.
 5. **Transfer Learning:** Training initializes from a pretrained `yolov8n.pt` base model, repurposing underlying visual patterns for agricultural feature extraction over 15 epochs with a batch size of 16.
 
-## 🔮 Future Execution / Local Inference
-To run inference on any new plant image using the trained assets in this repository, execute:
 
-```python
-from ultralytics import YOLO
-
-# Load the saved model weights
-model = YOLO('models/best.pt')
-
-# Run prediction on a new agricultural image
-results = model.predict(source='path_to_new_image.jpg', imgsz=512, conf=0.25)
-
-# Save visual results with drawn bounding boxes
-results[0].save()
